@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="car_tree" model="ir.ui.view">
+        <field name="name">car.list</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <list string="Cars">
+                <field name="full_name" />
+                <field name="model" />
+                <field name="year" />
+                <field name="price" />
+            </list>
+        </field>
+    </record>
+
+    <record id="car_form" model="ir.ui.view">
+        <field name="name">car.form</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <form string="Car">
+                <sheet>
+                    <group>
+                        <field name="full_name" />
+                        <field name="brand_id" />
+                        <field name="brand_country" />
+                        <field name="model" />
+                        <field name="available" />
+                    </group>
+                    <group>
+                        <field name="feature_ids" widget="many2many_tags" />
+                        <field name="year" />
+                        <field name="price" />
+                        <field name="buyer_id"
+                            domain="[('max_budget', '>=', price)]"
+                            context="{'default_max_budget': price}"
+                        />
+                        <button
+                            name="sell_car"
+                            type="object"
+                            string="Mark as Sold"
+                            class="oe_highlight"
+                        />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car" model="ir.actions.act_window">
+        <field name="name">Cars</field>
+        <field name="res_model">car.car</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add a car</p>
+        </field>
+    </record>
+
+</odoo>

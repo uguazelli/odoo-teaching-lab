@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <menuitem id="car_root" name="Car" sequence="1" />
+    <menuitem id="car_menu" name="Cars" parent="car_root" sequence="1" action="action_car" />
+    <menuitem id="brand_menu" name="Brands" parent="car_root" sequence="2" action="action_brand" />
+    <menuitem id="feature_menu" name="Features" parent="car_root" sequence="3"
+        action="action_feature" />
+    <menuitem id="carbuyer_menu" name="Buyers" parent="car_root" sequence="4"
+        action="action_car_buyer" />
+    <menuitem id="available_cars_menu" name="Available Cars" parent="car_root" sequence="5"
+        action="action_available_cars" />
+</odoo>

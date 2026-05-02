@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odoo_car,car.car,model_car_car,base.group_user,1,1,1,1
+access_odoo_brand,car.brand,model_car_brand,base.group_user,1,1,1,1
+access_odoo_feature,car.feature,model_car_feature,base.group_user,1,1,1,1
+access_odoo_carbuyer,car.buyer,model_car_buyer,base.group_user,1,1,1,1

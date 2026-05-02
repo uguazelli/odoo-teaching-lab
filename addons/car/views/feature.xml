@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="feature_tree" model="ir.ui.view">
+        <field name="name">feature.list</field>
+        <field name="model">car.feature</field>
+        <field name="arch" type="xml">
+            <list string="Features">
+                <field name="name" />
+                <field name="description" />
+            </list>
+        </field>
+    </record>
+
+    <record id="feature_form" model="ir.ui.view">
+        <field name="name">feature.form</field>
+        <field name="model">car.feature</field>
+        <field name="arch" type="xml">
+            <form string="Feature">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_feature" model="ir.actions.act_window">
+        <field name="name">Features</field>
+        <field name="res_model">car.feature</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add a feature</p>
+        </field>
+    </record>
+</odoo>

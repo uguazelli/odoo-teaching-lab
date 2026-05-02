@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="car_buyer_tree" model="ir.ui.view">
+        <field name="name">car.buyer.tree</field>
+        <field name="model">car.buyer</field>
+        <field name="arch" type="xml">
+            <list string="Car Buyers">
+                <field name="name" />
+                <field name="max_budget" />
+            </list>
+        </field>
+    </record>
+
+
+    <record id="car_buyer_form" model="ir.ui.view">
+        <field name="name">car.buyer.form</field>
+        <field name="model">car.buyer</field>
+        <field name="arch" type="xml">
+            <form string="car_buyer">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="max_budget" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_car_buyer" model="ir.actions.act_window">
+        <field name="name">Car Buyers</field>
+        <field name="res_model">car.buyer</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

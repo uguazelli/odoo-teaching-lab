@@ -1,0 +1,25 @@
+{
+    'name': 'Cars',
+    'version': '1.0.0',
+    'author': 'Ugo Guazelli, VeriData',
+    'description': """Odoo Cars""",
+    'summary': 'Mnage your cars with Odoo',
+    'sequence': 1,
+    'category': 'Services',
+    'depends': ['base'],
+    'web_icon': 'odoo_aula/static/description/icon.png',
+    'data': [
+        'security/ir.model.access.csv',
+        'views/car.xml',
+        'views/brand.xml',
+        'views/feature.xml',
+        'views/car_buyer.xml',
+        'views/available_cars.xml',
+
+        'views/menu.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+}
