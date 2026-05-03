@@ -7,7 +7,7 @@
     'sequence': 1,
     'category': 'Services',
     'depends': ['base'],
-    'web_icon': 'odoo_aula/static/description/icon.png',
+    'web_icon': 'car/static/description/icon.png',
     'data': [
         'security/ir.model.access.csv',
         'views/car.xml',

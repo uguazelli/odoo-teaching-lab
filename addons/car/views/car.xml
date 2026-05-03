@@ -20,9 +20,48 @@
         <field name="model">car.car</field>
         <field name="arch" type="xml">
             <form string="Car">
+                <header>
+                    <field
+                        name="status"
+                        widget="statusbar"
+                        statusbar_visible="draft,available,reserved,sold,cancelled" />
+
+                    <button
+                        name="sell_car"
+                        type="object"
+                        string="Mark as Sold"
+                        class="oe_highlight"
+                        invisible="status == 'sold'" />
+
+                    <button
+                        name="set_status_draft"
+                        type="object"
+                        string="Mark as Draft"
+                        invisible="status == 'draft'" />
+
+                    <button
+                        name="set_status_available"
+                        type="object"
+                        string="Mark as Available"
+                        invisible="status == 'available'" />
+
+                    <button
+                        name="set_status_reserved"
+                        type="object"
+                        string="Mark as Reserved"
+                        invisible="status == 'reserved'" />
+
+                    <button
+                        name="set_status_cancelled"
+                        type="object"
+                        string="Mark as Cancelled"
+                        invisible="status == 'cancelled'" />
+                </header>
                 <sheet>
                     <group>
                         <field name="full_name" />
+                        <field name="name" />
+                        <field name="status" />
                         <field name="brand_id" />
                         <field name="brand_country" />
                         <field name="model" />
@@ -35,12 +74,6 @@
                         <field name="buyer_id"
                             domain="[('max_budget', '>=', price)]"
                             context="{'default_max_budget': price}"
-                        />
-                        <button
-                            name="sell_car"
-                            type="object"
-                            string="Mark as Sold"
-                            class="oe_highlight"
                         />
                     </group>
                 </sheet>
