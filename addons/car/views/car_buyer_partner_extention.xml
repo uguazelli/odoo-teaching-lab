@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_partner_form_inherit_cars" model="ir.ui.view">
+        <field name="name">res.partner.car_buyer.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('mb8')]//field[@name='phone']/parent::div" position="after">
+                <div class="d-flex align-items-baseline w-md-50">
+                    <i class="fa fa-fw me-1 fa-car text-primary" title="Car Buyer" />
+                    <field name="is_car_buyer" />
+                </div>
+                <div class="d-flex align-items-baseline w-md-50" invisible="not is_car_buyer">
+                    <i class="fa fa-fw me-1 fa-tag text-primary" title="Preferred Car Brand" />
+                    <field
+                        name="preferred_car_brand_id"
+                        class="w-100"
+                        placeholder="Preferred Car Brand" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

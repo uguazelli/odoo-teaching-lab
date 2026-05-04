@@ -15,7 +15,7 @@
         'views/feature.xml',
         'views/car_buyer.xml',
         'views/available_cars.xml',
-
+        'views/car_buyer_partner_extention.xml',
         'views/menu.xml',
     ],
     'installable': True,
